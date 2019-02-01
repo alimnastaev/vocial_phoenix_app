@@ -2,6 +2,7 @@ defmodule Vocial.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
   alias Vocial.Accounts.User
+  alias Vocial.Votes.Poll
 
   schema "users" do
     field :username, :string
@@ -11,6 +12,8 @@ defmodule Vocial.Accounts.User do
 
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
+
+    has_many :polls, Poll
 
     timestamps()
   end
