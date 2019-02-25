@@ -22,4 +22,6 @@ defmodule VocialWeb.PollController do
       |> redirect(to: Routes.poll_path(conn, :index))
     end
   end
+
+  # test here got git long messages. delete it later
 end
