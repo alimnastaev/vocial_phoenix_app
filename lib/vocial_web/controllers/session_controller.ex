@@ -11,6 +11,7 @@ defmodule VocialWeb.SessionController do
     with user <- Accounts.get_user_by_username(username),
         {:ok, login_user} <- login(user, password) do
       conn
+      |> IO.inspect(conn, label: "===================================")
       |> put_flash(:info, "Logged in successfully!")
       |> put_session(:user, %{ id: login_user.id, username: login_user.username, email: login_user.email })
       |> redirect(to: "/")
